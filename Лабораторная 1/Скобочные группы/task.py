@@ -6,7 +6,7 @@ def check_brackets(brackets_row: str) -> bool:
     :return: True, если последовательность корректна, False в противном случае
     """
     :param brackets_row: Входная строка для проверки
-    :return: True # TODO реализовать проверку скобочной группы
+    :return : True # TODO реализовать проверку скобочной группы
 
     stack = []
     brackets_map = {")": "(", "}": "{", "]": "["} #
@@ -21,8 +21,7 @@ def check_brackets(brackets_row: str) -> bool:
     stack.pop()
     else:
     return False
-    return not stack
+      return not stack
 
  if __name__ == '__main__':
-    print(check_brackets("()()"))  # True
-    print(check_brackets(")("))  # False
+      print(check_brackets(")("))  # False
