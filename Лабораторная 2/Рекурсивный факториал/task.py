@@ -5,4 +5,15 @@ def factorial_recursive(n: int) -> int:
     :param n: Число, факториал которого нужно найти
     :return: n! - факториал числа n
     """
-    ...  # TODO реализовать рекурсивный алгоритм нахождения факториала
+    n = len(container)
+    sorted_container = list(container)
+    for i in range(n):
+        swapped = False
+        for j in range(n - i - 1):
+            if sorted_container[j] > sorted_container[j + 1]:
+                sorted_container[j], sorted_container[j + 1] = sorted_container[j + 1], sorted_container[j]
+                swapped = True
+        if not swapped:
+            break
+    return sorted_container
+    # TODO реализовать рекурсивный алгоритм нахождения факториала
