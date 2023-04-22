@@ -13,4 +13,11 @@ def sort(container: Sequence[int]) -> Sequence[int]:
     :param container: Массив, который надо отсортировать
     :return: Отсортированный в порядке возрастания массив
     """
-    ...  # TODO реализовать алгоритм сортировки пузырьком
+    n = len(container)
+    for j in range(n):
+        for j in range(0, n - j - 1):
+            for i in range(0, n - j - 1):
+                if container[i] > container[i + 1]:
+                    container[i], container[i + 1] = container[i + 1], container[i]
+    return container
+    # TODO реализовать алгоритм сортировки пузырьком
