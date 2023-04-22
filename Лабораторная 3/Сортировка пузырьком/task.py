@@ -13,21 +13,11 @@ def sort(container: Sequence[int]) -> Sequence[int]:
     :param container: Массив, который надо отсортировать
     :return: Отсортированный в порядке возрастания массив
     """
-    # Определение максимального значения в массиве
-    max_value = max(container)
-
-    # Создание вспомогательного массива с подсчетом количества элементов
-    counts = [0] * (max_value + 1)
-
-    # Подсчет количества каждого объекта
-    for item in container:
-        counts[item] += 1
-
-    # Восстановление отсортированного массива
-    result = []
-    for i in range(len(counts)):
-        for j in range(counts[i]):
-            result.append(i)
-
-    return result
+    n = len(container)
+    for j in range(n):
+        for j in range(0, n - j - 1):
+            for i in range(0, n - j - 1):
+                if container[i] > container[i + 1]:
+                    container[i], container[i + 1] = container[i + 1], container[i]
+    return container
     # TODO реализовать алгоритм сортировки пузырьком
